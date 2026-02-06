@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine 💖</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Collage background -->
+  <div id="collage" aria-hidden="true"></div>
+
+  <!-- Modal with multiple layers -->
+  <div class="overlay">
+    <div class="modal">
+
+      <!-- LAYER 0: START -->
+      <section class="screen active" id="screen-start">
+        <h1 class="title">Will you be my Valentine? 💘</h1>
+        <p class="subtitle" id="startSubtitle" style="display:none;">I planned a small surprise for you 💖</p>
+
+        <div class="btnRow" id="startBtnRow">
+          <button class="btn" id="yesBtn">Yes 💖</button>
+          <button class="btn btnOutline" id="noBtn">No 😅</button>
+        </div>
+
+        <div class="miniNote">Tip: update Spotify link in <b>script.js</b></div>
+      </section>
+
+      <!-- LAYER 1: WHY ME (Image, Video, Image, Video) -->
+      <section class="screen" id="screen-why">
+        <div class="headerIcon">💞</div>
+        <h2 class="scriptTitle">Why Me?</h2>
+
+        <div class="grid4">
+          <div class="hoverCard" data-media="assets/media/why1.jpg" data-type="image">
+            <div class="emoji">💗</div><div class="cardText">I care for you.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/why2.mp4" data-type="video">
+            <div class="emoji">🎥</div><div class="cardText">I make you smile.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/why3.jpg" data-type="image">
+            <div class="emoji">🫶</div><div class="cardText">I choose you.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/why4.mp4" data-type="video">
+            <div class="emoji">✨</div><div class="cardText">I love you.</div><div class="hoverMedia"></div>
+          </div>
+        </div>
+
+        <div class="bottomActions">
+          <button class="btn" id="toWhyAnirudhBtn">Why Anirudh? 😌</button>
+        </div>
+      </section>
+
+      <!-- LAYER 2: WHY ANIRUDH (Image, Video, Image, Video) -->
+      <section class="screen" id="screen-why-anirudh">
+        <div class="headerIcon">❤️</div>
+        <h2 class="scriptTitle">Why Anirudh?</h2>
+
+        <div class="grid4">
+          <div class="hoverCard" data-media="assets/media/an1.jpg" data-type="image">
+            <div class="emoji">🌟</div><div class="cardText">Your kind heart.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/an2.mp4" data-type="video">
+            <div class="emoji">😂</div><div class="cardText">Your laugh.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/an3.jpg" data-type="image">
+            <div class="emoji">🧿</div><div class="cardText">Your care.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/an4.mp4" data-type="video">
+            <div class="emoji">💍</div><div class="cardText">My forever.</div><div class="hoverMedia"></div>
+          </div>
+        </div>
+
+        <div class="bottomActions">
+          <button class="btn" id="toMemoriesBtn">Let’s Make Memories ✨</button>
+        </div>
+      </section>
+
+      <!-- LAYER 3: MEMORIES (Image, Video, Image, Video) -->
+      <section class="screen" id="screen-memories">
+        <div class="headerIcon">✨</div>
+        <h2 class="scriptTitle">Let’s Make Memories</h2>
+
+        <p class="centerText">I planned a magical day for us. I just want time with you. ❤️</p>
+
+        <div class="grid4">
+          <div class="hoverCard" data-media="assets/media/mem1.jpg" data-type="image">
+            <div class="emoji">🌸</div><div class="cardText">A sweet start.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/mem2.mp4" data-type="video">
+            <div class="emoji">🍴</div><div class="cardText">Food you love.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/mem3.jpg" data-type="image">
+            <div class="emoji">🎡</div><div class="cardText">Fun together.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/mem4.mp4" data-type="video">
+            <div class="emoji">🌅</div><div class="cardText">Sunset + us.</div><div class="hoverMedia"></div>
+          </div>
+        </div>
+
+        <div class="bottomActions">
+          <button class="btn" id="toReadyBtn">I’m Ready! 🥰</button>
+        </div>
+      </section>
+
+      <!-- LAYER 4: READY -->
+      <section class="screen" id="screen-ready">
+        <div class="headerIcon">💌</div>
+        <h2 class="scriptTitle">One more thing…</h2>
+
+        <div class="bigMessage">I don’t need a perfect day. I just need you with me. ❤️</div>
+
+        <div class="bottomActions">
+          <button class="btn" id="toStoryBtn">Next</button>
+        </div>
+      </section>
+
+      <!-- LAYER 5: STORY (Image, Video, Image, Video) -->
+      <section class="screen tall" id="screen-story">
+        <div class="headerIcon">📖</div>
+        <h2 class="scriptTitle">Our Story</h2>
+
+        <div class="grid4">
+          <div class="hoverCard" data-media="assets/media/story1.jpg" data-type="image">
+            <div class="emoji">💬</div><div class="cardText">We talked.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/story2.mp4" data-type="video">
+            <div class="emoji">😊</div><div class="cardText">We laughed.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/story3.jpg" data-type="image">
+            <div class="emoji">💞</div><div class="cardText">We fell in love.</div><div class="hoverMedia"></div>
+          </div>
+
+          <div class="hoverCard" data-media="assets/media/story4.mp4" data-type="video">
+            <div class="emoji">✨</div><div class="cardText">To be continued…</div><div class="hoverMedia"></div>
+          </div>
+        </div>
+
+        <div class="bottomActions">
+          <button class="btn" id="toSongsBtn">Songs for you 🎶</button>
+        </div>
+      </section>
+
+      <!-- LAYER 6: SONGS (2 cards) -->
+      <section class="screen" id="screen-songs">
+        <div class="headerIcon">🎶</div>
+        <h2 class="scriptTitle">Songs</h2>
+
+        <div class="songGrid2">
+          <div class="songBigCard" style="--cover:url('assets/song-covers/playlist.jpg')">
+            <div class="songMetaBig">
+              <div class="songNameBig">Spotify Playlist</div>
+              <div class="songArtistBig">Our vibe 💚</div>
+            </div>
+            <a class="openBtn" id="playlistBtn" href="#" target="_blank" rel="noreferrer">Open</a>
+          </div>
+
+          <div class="songBigCard" style="--cover:url('assets/song-covers/anushka.jpg')">
+            <div class="songMetaBig">
+              <div class="songNameBig">Anushka’s Favorite Song</div>
+              <div class="songArtistBig">Just for you 💖</div>
+            </div>
+            <button class="playBtnBig" id="favSongBtn" data-song="assets/songs/anushka-fav.mp3">Play</button>
+          </div>
+        </div>
+
+        <div class="nowPlaying" id="nowPlaying">Not playing</div>
+
+        <div class="bottomActions">
+          <button class="btn btnOutline" id="restartBtn">Restart 🔁</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <audio id="player"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
