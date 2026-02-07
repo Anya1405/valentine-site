@@ -1,9 +1,7 @@
 :root{
   --pink:#ff4f8a;
   --bg:#0b0b10;
-  --card:#ffffff;
   --text:#111;
-  --muted:#666;
   --shadow: 0 20px 60px rgba(0,0,0,.25);
   --radius: 18px;
 }
@@ -18,12 +16,12 @@ body{
   overflow-x:hidden;
 }
 
-/* backgrounds */
+/* BACKGROUNDS */
 .collage-bg{
   position: fixed;
   inset: 0;
   z-index: -3;
-  display:none; /* only show on layer-ask */
+  display:none;
   background:#000;
 }
 
@@ -38,7 +36,7 @@ body{
     linear-gradient(180deg, #07070b, #0b0b10);
 }
 
-/* layers */
+/* LAYERS */
 .layer{
   min-height: 100vh;
   display:none;
@@ -69,7 +67,6 @@ body{
   font-size: clamp(26px, 3.2vw, 44px);
   color: var(--pink);
   font-weight: 800;
-  letter-spacing: .2px;
 }
 .subtitle{
   margin: 0 0 18px 0;
@@ -86,14 +83,13 @@ body{
   color: rgba(255,255,255,.75);
 }
 
-/* buttons */
+/* BUTTONS */
 .btn-row{
   display:flex;
   gap: 12px;
   justify-content:center;
   flex-wrap:wrap;
   margin-top: 18px;
-  position: relative;
 }
 .btn{
   border:0;
@@ -119,7 +115,7 @@ body{
 }
 .tiny{ font-size: 13px; color: rgba(0,0,0,.55); margin-top: 14px; }
 
-/* grids */
+/* GRIDS */
 .grid{
   display:grid;
   gap: 16px;
@@ -138,7 +134,7 @@ body{
   .grid-6{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* flip cards */
+/* FLIP CARDS */
 .flip-card{
   perspective: 1100px;
   height: 220px;
@@ -182,7 +178,7 @@ body{
   display:block;
 }
 
-/* normal cards */
+/* NORMAL CARDS */
 .card{
   background: rgba(255,255,255,.10);
   border: 1px solid rgba(255,255,255,.16);
@@ -198,7 +194,7 @@ body{
   border-radius: 14px;
 }
 
-/* plan */
+/* PLAN */
 .plan{
   display:grid;
   gap: 12px;
@@ -222,7 +218,7 @@ body{
   color: rgba(255,255,255,.8);
 }
 
-/* quiz */
+/* QUIZ */
 .quiz{
   background: rgba(255,255,255,.10);
   border: 1px solid rgba(255,255,255,.16);
