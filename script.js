@@ -18,13 +18,10 @@ function showLayer(id){
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// ========= Collage (like your inspo screenshot) =========
 function buildCollage(){
   const container = document.getElementById("collageBg");
 
-  // Put your photos in assets/collage/
-  // Add as many as you want in this list.
-  const photos = [
+  const photos = [ 
     "assets/collage/1.jpg","assets/collage/2.jpg","assets/collage/3.jpg","assets/collage/4.jpg",
     "assets/collage/5.jpg","assets/collage/6.jpg","assets/collage/7.jpg","assets/collage/8.jpg",
     "assets/collage/9.jpg","assets/collage/10.jpg","assets/collage/11.jpg","assets/collage/12.jpg",
@@ -324,58 +321,45 @@ function buildCollage(){
     "assets/collage/1185.jpg","assets/collage/1186.jpg","assets/collage/1187.jpg",
   ];
 
-  // If you don’t want to manually list 100 photos:
-  // You can keep just these 12, OR duplicate paths in the array.
-
   container.innerHTML = "";
   container.style.display = "block";
   container.style.background = "#000";
 
   const grid = document.createElement("div");
   grid.style.display = "grid";
-  grid.style.gridTemplateColumns = "repeat(18, 1fr)";
-  grid.style.gridAutoRows = "64px";
   grid.style.gap = "2px";
   grid.style.height = "100%";
   grid.style.width = "100%";
 
-// Show ALL images exactly once (1187)
-const total = photos.length;
+  // Fit all images on one screen
+  const total = photos.length;       // 1187
+  const cols = 35;                   // tweak if you want smaller/bigger
+  const rows = Math.ceil(total / cols);
 
-// Decide columns and rows so everything fits
-// 1187 ~ 35 x 34 (1190 cells)
-const cols = 35;
-const rows = Math.ceil(total / cols);
+  grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+  grid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
 
-// Update grid to fit everything
-grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
-grid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
-// Make the grid fill the screen
-grid.style.height = "100%";
-grid.style.width = "100%";
+  for (let i = 0; i < total; i++) {
+    const tile = document.createElement("div");
+    tile.style.background = "#111";
+    tile.style.overflow = "hidden";
+    tile.style.display = "flex";
+    tile.style.alignItems = "center";
+    tile.style.justifyContent = "center";
 
-for (let i = 0; i < total; i++) {
-  const tile = document.createElement("div");
-  tile.style.overflow = "hidden";
-  tile.style.background = "#111";
-  tile.style.display = "flex";
-  tile.style.alignItems = "center";
-  tile.style.justifyContent = "center";
+    const img = document.createElement("img");
+    img.src = photos[i];
+    img.alt = "";
+    img.loading = "lazy";
+    img.style.width = "100%";
+    img.style.height = "100%";
+    img.style.objectFit = "contain";
+    img.style.background = "#111";
 
-  const img = document.createElement("img");
-  img.src = photos[i]; // IMPORTANT: no % (no repeating)
-  img.alt = "";
-  img.loading = "lazy";
-  img.style.width = "100%";
-  img.style.height = "100%";
-  img.style.objectFit = "contain"; // IMPORTANT: no cropping
-  img.style.background = "#111";
+    tile.appendChild(img);
+    grid.appendChild(tile);
+  }
 
-  tile.appendChild(img);
-  grid.appendChild(tile);
-}
-
-  // Dark overlay so center card pops (like your screenshot)
   const overlay = document.createElement("div");
   overlay.style.position = "absolute";
   overlay.style.inset = "0";
@@ -388,7 +372,6 @@ for (let i = 0; i < total; i++) {
   container.appendChild(grid);
   container.appendChild(overlay);
 }
-
 
 // ========= "No" button logic =========
 let noClicks = 0;
