@@ -1,193 +1,331 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Valentine 💖</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anushka ❤️ Anirudh</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Collage background (only visible on layer 1) -->
+    <div id="collageBg" class="collage-bg" aria-hidden="true"></div>
 
-  <!-- Collage background -->
-  <div id="collage" aria-hidden="true"></div>
+    <!-- Soft dark pattern background (used on other layers) -->
+    <div id="darkBg" class="dark-bg" aria-hidden="true"></div>
 
-  <!-- Modal with multiple layers -->
-  <div class="overlay">
-    <div class="modal">
+    <!-- ========== LAYER 1: ASK ========== -->
+    <section class="layer active" id="layer-ask">
+      <div class="center-card">
+        <h1 class="title">
+          Anirudh, will you be my Valentine? 💘
+        </h1>
+        <p class="subtitle">I have a little journey for you…</p>
 
-      <!-- LAYER 0: START -->
-      <section class="screen active" id="screen-start">
-        <h1 class="title">Will you be my Valentine? 💘</h1>
-        <p class="subtitle" id="startSubtitle" style="display:none;">I planned a small surprise for you 💖</p>
-
-        <div class="btnRow" id="startBtnRow">
-          <button class="btn" id="yesBtn">Yes 💖</button>
-          <button class="btn btnOutline" id="noBtn">No 😅</button>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btnYes">Yes 💖</button>
+          <button class="btn btn-ghost" id="btnNo">No 🙂</button>
         </div>
 
-        <div class="miniNote">Tip: update Spotify link in <b>script.js</b></div>
-      </section>
+        <p class="tiny" id="noHint"></p>
+      </div>
+    </section>
 
-      <!-- LAYER 1: WHY ME (Image, Video, Image, Video) -->
-      <section class="screen" id="screen-why">
-        <div class="headerIcon">💞</div>
-        <h2 class="scriptTitle">Why Me?</h2>
+    <!-- ========== LAYER 2: WHY ME ========== -->
+    <section class="layer" id="layer-whyme">
+      <div class="page">
+        <h2 class="page-title">WHY ME? 🥺</h2>
+        <p class="page-subtitle">Hover the cards</p>
 
-        <div class="grid4">
-          <div class="hoverCard" data-media="assets/media/why1.jpg" data-type="image">
-            <div class="emoji">💗</div><div class="cardText">I care for you.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/why2.mp4" data-type="video">
-            <div class="emoji">🎥</div><div class="cardText">I make you smile.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/why3.jpg" data-type="image">
-            <div class="emoji">🫶</div><div class="cardText">I choose you.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/why4.mp4" data-type="video">
-            <div class="emoji">✨</div><div class="cardText">I love you.</div><div class="hoverMedia"></div>
-          </div>
-        </div>
-
-        <div class="bottomActions">
-          <button class="btn" id="toWhyAnirudhBtn">Why Anirudh? 😌</button>
-        </div>
-      </section>
-
-      <!-- LAYER 2: WHY ANIRUDH (Image, Video, Image, Video) -->
-      <section class="screen" id="screen-why-anirudh">
-        <div class="headerIcon">❤️</div>
-        <h2 class="scriptTitle">Why Anirudh?</h2>
-
-        <div class="grid4">
-          <div class="hoverCard" data-media="assets/media/an1.jpg" data-type="image">
-            <div class="emoji">🌟</div><div class="cardText">Your kind heart.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/an2.mp4" data-type="video">
-            <div class="emoji">😂</div><div class="cardText">Your laugh.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/an3.jpg" data-type="image">
-            <div class="emoji">🧿</div><div class="cardText">Your care.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/an4.mp4" data-type="video">
-            <div class="emoji">💍</div><div class="cardText">My forever.</div><div class="hoverMedia"></div>
-          </div>
-        </div>
-
-        <div class="bottomActions">
-          <button class="btn" id="toMemoriesBtn">Let’s Make Memories ✨</button>
-        </div>
-      </section>
-
-      <!-- LAYER 3: MEMORIES (Image, Video, Image, Video) -->
-      <section class="screen" id="screen-memories">
-        <div class="headerIcon">✨</div>
-        <h2 class="scriptTitle">Let’s Make Memories</h2>
-
-        <p class="centerText">I planned a magical day for us. I just want time with you. ❤️</p>
-
-        <div class="grid4">
-          <div class="hoverCard" data-media="assets/media/mem1.jpg" data-type="image">
-            <div class="emoji">🌸</div><div class="cardText">A sweet start.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/mem2.mp4" data-type="video">
-            <div class="emoji">🍴</div><div class="cardText">Food you love.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/mem3.jpg" data-type="image">
-            <div class="emoji">🎡</div><div class="cardText">Fun together.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/mem4.mp4" data-type="video">
-            <div class="emoji">🌅</div><div class="cardText">Sunset + us.</div><div class="hoverMedia"></div>
-          </div>
-        </div>
-
-        <div class="bottomActions">
-          <button class="btn" id="toReadyBtn">I’m Ready! 🥰</button>
-        </div>
-      </section>
-
-      <!-- LAYER 4: READY -->
-      <section class="screen" id="screen-ready">
-        <div class="headerIcon">💌</div>
-        <h2 class="scriptTitle">One more thing…</h2>
-
-        <div class="bigMessage">I don’t need a perfect day. I just need you with me. ❤️</div>
-
-        <div class="bottomActions">
-          <button class="btn" id="toStoryBtn">Next</button>
-        </div>
-      </section>
-
-      <!-- LAYER 5: STORY (Image, Video, Image, Video) -->
-      <section class="screen tall" id="screen-story">
-        <div class="headerIcon">📖</div>
-        <h2 class="scriptTitle">Our Story</h2>
-
-        <div class="grid4">
-          <div class="hoverCard" data-media="assets/media/story1.jpg" data-type="image">
-            <div class="emoji">💬</div><div class="cardText">We talked.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/story2.mp4" data-type="video">
-            <div class="emoji">😊</div><div class="cardText">We laughed.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/story3.jpg" data-type="image">
-            <div class="emoji">💞</div><div class="cardText">We fell in love.</div><div class="hoverMedia"></div>
-          </div>
-
-          <div class="hoverCard" data-media="assets/media/story4.mp4" data-type="video">
-            <div class="emoji">✨</div><div class="cardText">To be continued…</div><div class="hoverMedia"></div>
-          </div>
-        </div>
-
-        <div class="bottomActions">
-          <button class="btn" id="toSongsBtn">Songs for you 🎶</button>
-        </div>
-      </section>
-
-      <!-- LAYER 6: SONGS (2 cards) -->
-      <section class="screen" id="screen-songs">
-        <div class="headerIcon">🎶</div>
-        <h2 class="scriptTitle">Songs</h2>
-
-        <div class="songGrid2">
-          <div class="songBigCard" style="--cover:url('assets/song-covers/playlist.jpg')">
-            <div class="songMetaBig">
-              <div class="songNameBig">Spotify Playlist</div>
-              <div class="songArtistBig">Our vibe 💚</div>
+        <div class="grid grid-4">
+          <!-- image -->
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">Card 1</div>
+              <div class="flip-back">
+                <img src="assets/whyme/card1.jpg" alt="Memory 1" />
+              </div>
             </div>
-            <a class="openBtn" id="playlistBtn" href="#" target="_blank" rel="noreferrer">Open</a>
           </div>
 
-          <div class="songBigCard" style="--cover:url('assets/song-covers/anushka.jpg')">
-            <div class="songMetaBig">
-              <div class="songNameBig">Anushka’s Favorite Song</div>
-              <div class="songArtistBig">Just for you 💖</div>
+          <!-- video -->
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">Card 2</div>
+              <div class="flip-back">
+                <video src="assets/whyme/card2.mp4" muted loop playsinline></video>
+              </div>
             </div>
-            <button class="playBtnBig" id="favSongBtn" data-song="assets/songs/anushka-fav.mp3">Play</button>
+          </div>
+
+          <!-- image -->
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">Card 3</div>
+              <div class="flip-back">
+                <img src="assets/whyme/card3.jpg" alt="Memory 3" />
+              </div>
+            </div>
+          </div>
+
+          <!-- video -->
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">Card 4</div>
+              <div class="flip-back">
+                <video src="assets/whyme/card4.mp4" muted loop playsinline></video>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="nowPlaying" id="nowPlaying">Not playing</div>
-
-        <div class="bottomActions">
-          <button class="btn btnOutline" id="restartBtn">Restart 🔁</button>
+        <div class="footer-cta">
+          <button class="btn btn-primary" data-next="layer-whyonly">
+            Let’s make memories ✨
+          </button>
         </div>
-      </section>
+      </div>
+    </section>
 
-    </div>
-  </div>
+    <!-- ========== LAYER 3: WHY ONLY ANIRUDH ========== -->
+    <section class="layer" id="layer-whyonly">
+      <div class="page">
+        <h2 class="page-title">WHY ONLY ANIRUDH? 😌</h2>
+        <p class="page-subtitle">Hover the cards</p>
 
-  <audio id="player"></audio>
-  <script src="script.js"></script>
-</body>
+        <div class="grid grid-6">
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">1</div>
+            <div class="flip-back"><img src="assets/whyonly/c1.jpg" alt="Why 1" /></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">2</div>
+            <div class="flip-back"><video src="assets/whyonly/c2.mp4" muted loop playsinline></video></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">3</div>
+            <div class="flip-back"><img src="assets/whyonly/c3.jpg" alt="Why 3" /></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">4</div>
+            <div class="flip-back"><video src="assets/whyonly/c4.mp4" muted loop playsinline></video></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">5</div>
+            <div class="flip-back"><img src="assets/whyonly/c5.jpg" alt="Why 5" /></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">6</div>
+            <div class="flip-back"><video src="assets/whyonly/c6.mp4" muted loop playsinline></video></div>
+          </div></div>
+        </div>
+
+        <div class="footer-cta">
+          <button class="btn btn-primary" data-next="layer-memories">
+            I’m Ready ✅
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LAYER 4: LET'S MAKE MEMORIES (PLAN) ========== -->
+    <section class="layer" id="layer-memories">
+      <div class="page">
+        <h2 class="page-title">Let’s make memories 🗓️</h2>
+        <p class="page-subtitle">A plan made with love </p>
+
+        <div class="plan">
+          <div class="plan-item"><span>Morning</span><p>Breakfast + hugs (mandatory)</p></div>
+          <div class="plan-item"><span>After Breakfast</span><p>Fun activity (Go-Karting / arcade)</p></div>
+          <div class="plan-item"><span>Lunch</span><p>At Shri Masala Cafe</p></div>
+          <div class="plan-item"><span>After Lunch</span><p>Tour to Prudential Tower</p></div>
+          <div class="plan-item"><span>Evening</span><p>Sunset 🌅 at Castel Island</p></div>
+          <div class="plan-item"><span>Night</span><p>Dinner date 💖 at Nawabi </p></div>
+          <div class="plan-item"><span>Dessert</span><p>Insomenia Cookies🍪</p></div>
+          <div class="plan-item"><span>Night</span><p>Long Drive to Homev🏡</p></div>
+        </div>
+
+        <div class="footer-cta">
+          <button class="btn btn-primary" data-next="layer-story">
+            Next ➜
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LAYER 5: OUR STORY (8 cards) ========== -->
+    <section class="layer" id="layer-story">
+      <div class="page">
+        <h2 class="page-title">Our story 📖</h2>
+        <p class="page-subtitle">Hover the cards</p>
+
+        <div class="grid grid-8">
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">1</div>
+            <div class="flip-back"><img src="assets/story/s1.jpg" alt="Story 1" /></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">2</div>
+            <div class="flip-back"><video src="assets/story/s2.mp4" muted loop playsinline></video></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">3</div>
+            <div class="flip-back"><img src="assets/story/s3.jpg" alt="Story 3" /></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">4</div>
+            <div class="flip-back"><video src="assets/story/s4.mp4" muted loop playsinline></video></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">5</div>
+            <div class="flip-back"><img src="assets/story/s5.jpg" alt="Story 5" /></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">6</div>
+            <div class="flip-back"><video src="assets/story/s6.mp4" muted loop playsinline></video></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">7</div>
+            <div class="flip-back"><img src="assets/story/s7.jpg" alt="Story 7" /></div>
+          </div></div>
+
+          <div class="flip-card"><div class="flip-inner">
+            <div class="flip-front">8</div>
+            <div class="flip-back"><video src="assets/story/s8.mp4" muted loop playsinline></video></div>
+          </div></div>
+        </div>
+
+        <div class="footer-cta">
+          <button class="btn btn-primary" data-next="layer-playlist">
+            I have made a playlist for you 🎶
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LAYER 6: PLAYLIST ========== -->
+    <section class="layer" id="layer-playlist">
+      <div class="page">
+        <h2 class="page-title">Music time 🎧</h2>
+        <p class="page-subtitle">One for us… and one for me 😌</p>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Our playlist</h3>
+            <!-- Replace the src with your Spotify embed link -->
+            <iframe
+              id="spotifyEmbed"
+              style="border-radius: 16px; width: 100%; height: 380px; border: 0;"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              src="https://open.spotify.com/playlist/1U5iyN4XycJmNQn2YN1nkD?si=jsk2xpjOSCCCzLwAdxPTgQ&pi=b_E4NGSdTbaQ4R_PLAYLIST_ID_HERE"
+            ></iframe>
+            <p class="tiny">https://open.spotify.com/playlist/1U5iyN4XycJmNQn2YN1nkD?si=jsk2xpjOSCCCzLwAdxPTgQ&pi=b_E4NGSdTbaQ4 <b>index.html</b></p>
+          </div>
+
+          <div class="card">
+            <h3>ANUSHKA’S FAV 💗</h3>
+            <img src="assets/fav/ANI.mp4" alt="Anushka fav" />
+            <p class="tiny">JUST FOR YOU ❤️</p>
+          </div>
+        </div>
+
+        <div class="footer-cta">
+          <button class="btn btn-primary" data-next="layer-q1">
+            Let’s have a small quiz 📝
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== QUIZ LAYERS (4 questions) ========== -->
+    <section class="layer" id="layer-q1">
+      <div class="page">
+        <h2 class="page-title">Quiz 1/4</h2>
+        <div class="quiz">
+          <p class="quiz-q">Where did we have our most wholesome date?</p>
+          <div class="quiz-opts">
+            <button class="btn btn-ghost quizOpt">Beach</button>
+            <button class="btn btn-ghost quizOpt">Cafe</button>
+            <button class="btn btn-ghost quizOpt">Movie</button>
+            <button class="btn btn-ghost quizOpt">Home</button>
+          </div>
+        </div>
+        <div class="footer-cta">
+          <button class="btn btn-primary" data-next="layer-q2">Next ➜</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="layer" id="layer-q2">
+      <div class="page">
+        <h2 class="page-title">Quiz 2/4</h2>
+        <div class="quiz">
+          <p class="quiz-q">What’s my go-to mood when I miss you?</p>
+          <div class="quiz-opts">
+            <button class="btn btn-ghost quizOpt">Silent</button>
+            <button class="btn btn-ghost quizOpt">Extra clingy</button>
+            <button class="btn btn-ghost quizOpt">I act busy</button>
+            <button class="btn btn-ghost quizOpt">All of the above</button>
+          </div>
+        </div>
+        <div class="footer-cta">
+          <button class="btn btn-primary" data-next="layer-q3">Next ➜</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="layer" id="layer-q3">
+      <div class="page">
+        <h2 class="page-title">Quiz 3/4</h2>
+        <div class="quiz">
+          <p class="quiz-q">Pick the correct answer:</p>
+          <div class="quiz-opts">
+            <button class="btn btn-ghost quizOpt">Anirudh + Anushka = Forever</button>
+            <button class="btn btn-ghost quizOpt">Anirudh + Anushka = Always hungry</button>
+            <button class="btn btn-ghost quizOpt">Anirudh + Anushka = Travel mode</button>
+            <button class="btn btn-ghost quizOpt">All are true</button>
+          </div>
+        </div>
+        <div class="footer-cta">
+          <button class="btn btn-primary" data-next="layer-q4">Next ➜</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="layer" id="layer-q4">
+      <div class="page">
+        <h2 class="page-title">Quiz 4/4</h2>
+        <div class="quiz">
+          <p class="quiz-q">Final question: Will you be my Valentine? 💘</p>
+          <div class="quiz-opts">
+            <button class="btn btn-primary" id="finalYes">YES ❤️</button>
+          </div>
+        </div>
+        <div class="footer-cta">
+          <button class="btn btn-primary" id="finishBtn">Next ➜</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FINAL ========== -->
+    <section class="layer" id="layer-final">
+      <div class="center-card">
+        <h1 class="title">THANKS FOR SAYING YES 💖</h1>
+        <p class="subtitle">I LOVE YOU A LOT, ANIRUDH 🥺❤️</p>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
 </html>
